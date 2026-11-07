@@ -57,7 +57,10 @@ body{
 }
 
 .rail-brand{display:flex;align-items:center;gap:10px}
-.rb-mark{width:9px;height:9px;background:var(--red);display:block;flex:none}
+.rb-mark{
+  width:32px;height:32px;object-fit:cover;object-position:center;
+  display:block;flex:none;
+}
 .rb-text{font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:var(--bone)}
 .rb-sub{font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--faint);margin-top:9px}
 
