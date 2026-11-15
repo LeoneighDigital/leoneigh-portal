@@ -272,7 +272,7 @@ body{
 
 .dl-head,.dl-row{
   display:grid;
-  grid-template-columns:52px minmax(0,1fr) 44px 112px 58px 124px 64px;
+  grid-template-columns:52px minmax(0,1fr) 44px 112px 58px 124px 88px;
   gap:16px;align-items:center;
 }
 .dl-head{
@@ -281,15 +281,17 @@ body{
 }
 .dl-head span{font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--faint)}
 .dl-head span:last-child{text-align:right}
-.dl-actions{display:flex;justify-content:flex-end;gap:6px}
+.dl-actions{display:flex;gap:5px;justify-content:flex-end}
 .dl-btn{
-  appearance:none;background:none;border:1px solid var(--line-2);color:var(--dim);
-  min-width:26px;height:26px;padding:0 6px;cursor:pointer;
-  font-family:var(--mono);font-size:10px;line-height:1;
+  appearance:none;width:22px;height:22px;padding:0;display:grid;place-items:center;
+  border:1px solid var(--line-2);background:transparent;color:var(--faint);
+  font-family:var(--mono);font-size:10px;font-weight:700;cursor:pointer;
+  transition:color .12s,border-color .12s,background .12s;
 }
-.dl-btn:hover:not(:disabled){border-color:var(--red);color:var(--bone)}
-.dl-btn:disabled{color:var(--faint);cursor:not-allowed}
-.dl-btn-approve{color:var(--red)}
+.dl-btn:hover:not(:disabled){color:var(--bone);border-color:var(--dim)}
+.dl-btn-approve:hover:not(:disabled){background:var(--red);border-color:var(--red);color:#fff}
+.dl-btn-revise:hover:not(:disabled){border-color:var(--bone);color:var(--bone)}
+.dl-btn:disabled{opacity:.35;cursor:not-allowed}
 .dl-row{padding:14px 0;border-bottom:1px solid var(--line)}
 .dl-id{font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.04em}
 .dl-title{
@@ -384,30 +386,77 @@ body{
 .recap-s{font-family:var(--mono);font-size:8px;letter-spacing:.16em;color:var(--faint);margin-top:3px}
 .recap-dur{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--dim);flex:none}
 
-.recap[role="button"]:focus-visible,.dl-btn:focus-visible,.rd-close:focus-visible{
+.recap[role="button"]:focus-visible,.dl-btn:focus-visible,.rd-x:focus-visible{
   outline:1px solid var(--red);outline-offset:3px;
 }
 
-.recap-drawer[hidden]{display:none}
+.recap-drawer[hidden],.recap-drawer[aria-hidden="true"]{display:none}
 .recap-drawer{
-  position:fixed;inset:0;z-index:10;display:flex;justify-content:flex-end;
+  position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:24px;
 }
 .rd-backdrop{
-  position:absolute;inset:0;border:0;background:rgba(0,0,0,.72);cursor:pointer;
+  position:absolute;inset:0;background:rgba(0,0,0,.78);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  animation:fade .18s ease-out;
 }
-.rd-panel{
-  position:relative;width:min(480px,100%);height:100%;padding:48px 36px;
-  border-left:1px solid var(--line-2);background:var(--bg);
-  box-shadow:-24px 0 64px rgba(0,0,0,.35);
+.rd-card{
+  position:relative;width:min(880px,100%);max-height:min(88vh,720px);
+  display:flex;flex-direction:column;background:var(--bg);
+  border:1px solid var(--line-2);box-shadow:0 30px 80px rgba(0,0,0,.75);
+  animation:rise .22s cubic-bezier(.2,.9,.3,1);
 }
-.rd-close{
-  position:absolute;top:18px;right:20px;width:32px;height:32px;
-  border:1px solid var(--line-2);background:none;color:var(--dim);
-  font-size:22px;line-height:1;cursor:pointer;
+.rd-head{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:20px;padding:22px 26px 18px;border-bottom:1px solid var(--line);
 }
-.rd-panel .rub-title{font-family:var(--mono);font-size:8px;letter-spacing:.2em;color:var(--red)}
-.rd-title{margin-top:16px;font:400 28px/1.25 var(--serif);color:var(--bone)}
-.rd-meta{margin-top:10px;font:9px/1.5 var(--mono);letter-spacing:.12em;color:var(--faint)}
+.rd-eyebrow{
+  font-family:var(--mono);font-size:8px;letter-spacing:.24em;
+  color:var(--red);margin-bottom:8px;
+}
+.rd-x{
+  width:32px;height:32px;flex:none;background:transparent;
+  border:1px solid transparent;color:var(--dim);font-size:22px;
+  line-height:1;cursor:pointer;
+}
+.rd-x:hover{color:var(--bone);border-color:var(--line-2)}
+.rd-title{
+  font-family:var(--serif);font-weight:400;font-size:22px;
+  color:var(--bone);letter-spacing:-.01em;
+}
+.rd-meta{
+  font-family:var(--mono);font-size:9px;letter-spacing:.14em;
+  color:var(--faint);margin-top:8px;
+}
+.rd-video{
+  flex:1;min-height:0;padding:22px 26px;background:#050505;
+  display:grid;place-items:center;
+}
+.rd-player{
+  width:100%;aspect-ratio:16/9;max-height:100%;
+  border:1px solid var(--line-2);
+  background:radial-gradient(circle at 50% 50%,#141414,#050505);
+  display:grid;place-items:center;gap:18px;grid-template-rows:1fr auto;padding:32px;
+}
+.rd-play{
+  width:64px;height:64px;border:1px solid var(--red);display:grid;place-items:center;
+}
+.rd-play span{
+  width:0;height:0;margin-left:6px;border-left:18px solid var(--red);
+  border-top:11px solid transparent;border-bottom:11px solid transparent;
+}
+.rd-caption{
+  font-family:var(--mono);font-size:9px;letter-spacing:.18em;
+  color:var(--faint);text-transform:uppercase;
+}
+.rd-foot{
+  display:flex;justify-content:space-between;gap:16px;
+  padding:14px 26px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:8.5px;letter-spacing:.18em;
+  color:var(--faint);text-transform:uppercase;
+}
+.rd-esc{opacity:.6}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
 
 /* ══════════════════════════════════════════════════════════════
    05 — REGISTER
@@ -455,7 +504,7 @@ body{
 @media(max-width:1080px){
   .main{padding:36px 32px 56px}
   .split{grid-template-columns:1fr;gap:52px}
-  .dl-head,.dl-row{grid-template-columns:46px minmax(0,1fr) 40px 100px 54px 110px 64px;gap:12px}
+  .dl-head,.dl-row{grid-template-columns:46px minmax(0,1fr) 40px 100px 54px 110px 72px;gap:12px}
 }
 
 @media(max-width:900px){
@@ -486,7 +535,7 @@ body{
   .ms-bar{display:none}
   .ret-top{flex-direction:column;align-items:flex-start;gap:14px}
   .ret-pct-block{text-align:left}
-  .dl-head,.dl-row{grid-template-columns:40px minmax(0,1fr) 100px 64px;gap:12px}
+  .dl-head,.dl-row{grid-template-columns:40px minmax(0,1fr) 100px 66px;gap:12px}
   .dl-type,.dl-owner,.dl-date{display:none}
   .dl-head span:nth-child(3),
   .dl-head span:nth-child(4),
