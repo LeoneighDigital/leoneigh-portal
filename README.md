@@ -10,7 +10,7 @@
 
 The **Leoneigh Portal** is a prototype dashboard designed to replace disjointed status calls, Slack threads, and email chains with a single, high-signal audit surface. 
 
-It provides clients with a real-time, read-only view of their active engagement, including sprint progress, retainer hours burned, recent deliverables, and locked architectural decisions. 
+It provides clients with a live view of their active engagement, including sprint progress, retainer hours burned, recent deliverables, and locked architectural decisions. The prototype also simulates deliverable approval and revision requests; these demo changes are held in memory and reset when the page is reloaded.
 
 The prototype includes a **Tenancy Switcher** to demonstrate how the exact same UI shell scales across completely different engagement types (e.g., an active engineering sprint, a design systems project, or a heavy platform migration).
 
@@ -19,7 +19,7 @@ The prototype includes a **Tenancy Switcher** to demonstrate how the exact same 
 - **Tenant Switcher:** A sidebar rail allowing seamless toggling between different demo client profiles (Studio A, Agency B, Foundry C).
 - **Sprint Telemetry:** Live progress against the active bi-weekly milestone, including a day-by-day visual tracker and individual milestone statuses.
 - **Retainer Burn Meter:** Tabular telemetry showing hours consumed, committed, and available, broken down by discipline (Engineering, Design, QA) with rollover reserves.
-- **Deliverable Ledger:** A clean log of shipped PRs, architecture docs, and RFCs with status badges (`IN PRODUCTION`, `DEPLOYED`, `REVIEW`, `QUEUED`).
+- **Deliverable Ledger:** A clean log of shipped PRs, architecture docs, and RFCs with status badges (`IN PRODUCTION`, `DEPLOYED`, `REVIEW`, `QUEUED`), plus simulated approval and revision controls for active items.
 - **Dispatch Log:** An asynchronous communication feed that replaces Slack, featuring dispatch notes, embedded video recaps, and zero-latency decision logs. Filterable by entry type.
 - **Decision Register:** A permanent, read-only record of locked and superseded decisions.
 
