@@ -11,7 +11,7 @@ const CLIENTS = [
     engagement: 'Product Engineering · Retainer',
     started: 'Mar 2024',
     tzId: 'America/Los_Angeles',
-    contact: 'M. Okafor',
+    contact: 'Production Desk',
     sla: '4h response',
 
     sprint: {
@@ -46,22 +46,22 @@ const CLIENTS = [
     },
 
     deliverables: [
-      { id: '#412', title: 'Role permission matrix schema', type: 'PR', owner: 'L. Marchetti', date: 'MAR 12', status: 'IN PRODUCTION' },
-      { id: '#418', title: 'Webhook retry backoff + jitter', type: 'PR', owner: 'R. Adeyemi', date: 'MAR 11', status: 'REVIEW' },
-      { id: '#421', title: 'Staging seed fixtures', type: 'PR', owner: 'J. Park', date: 'MAR 09', status: 'DEPLOYED' },
-      { id: '#425', title: 'RBAC audit + threat notes', type: 'DOC', owner: 'L. Marchetti', date: 'MAR 07', status: 'DEPLOYED' },
-      { id: '#429', title: 'Webhook dead-letter queue', type: 'PR', owner: 'R. Adeyemi', date: 'MAR 12', status: 'REVIEW' },
-      { id: '#431', title: 'Migration rollback plan', type: 'RFC', owner: 'J. Park', date: 'MAR 06', status: 'QUEUED' }
+      { id: '#412', title: 'Role permission matrix schema', type: 'PR', owner: 'Production Desk', date: 'MAR 12', status: 'IN PRODUCTION' },
+      { id: '#418', title: 'Webhook retry backoff + jitter', type: 'PR', owner: 'Front-End Systems', date: 'MAR 11', status: 'REVIEW' },
+      { id: '#421', title: 'Staging seed fixtures', type: 'PR', owner: 'Front-End Systems', date: 'MAR 09', status: 'DEPLOYED' },
+      { id: '#425', title: 'RBAC audit + threat notes', type: 'DOC', owner: 'Production Desk', date: 'MAR 07', status: 'DEPLOYED' },
+      { id: '#429', title: 'Webhook dead-letter queue', type: 'PR', owner: 'Performance QA', date: 'MAR 12', status: 'REVIEW' },
+      { id: '#431', title: 'Migration rollback plan', type: 'RFC', owner: 'Accounts', date: 'MAR 06', status: 'QUEUED' }
     ],
 
     feed: [
       {
-        type: 'DISPATCH', date: 'MAR 12', time: '09:41', by: 'L. Marchetti',
+        type: 'DISPATCH', date: 'MAR 12', time: '09:41', by: 'Front-End Systems',
         title: 'Webhook retry semantics locked',
         body: 'Backoff now caps at six attempts with jitter between 2s and 240s. The dead-letter queue drains to the ops webhook. No client-side change required.'
       },
       {
-        type: 'RECAP', date: 'MAR 11', time: '17:20', by: 'L. Marchetti',
+        type: 'RECAP', date: 'MAR 11', time: '17:20', by: 'Production Desk',
         title: 'Week 10 async recap',
         body: 'Sprint 04 midpoint review: RBAC schema walkthrough, retry queue demo, and the revised staging cutover window.',
         video: { dur: '06:12', chapters: 14 }
@@ -72,20 +72,20 @@ const CLIENTS = [
         body: 'Locked after the Mar 09 review. Rejected alternative of 3 attempts (insufficient for partner webhooks). Supersedes DEC-011.'
       },
       {
-        type: 'DISPATCH', date: 'MAR 08', time: '14:32', by: 'R. Adeyemi',
+        type: 'DISPATCH', date: 'MAR 08', time: '14:32', by: 'Performance QA',
         title: 'Staging cutover moved to Mar 16',
         body: 'Client UAT window shifted by two days to accommodate the webhook migration freeze. No impact on the Mar 17 sprint close.'
       },
       {
-        type: 'DISPATCH', date: 'MAR 04', time: '10:15', by: 'J. Park',
+        type: 'DISPATCH', date: 'MAR 04', time: '10:15', by: 'Accounts',
         title: 'Sprint 04 scope confirmed',
         body: 'RBAC and webhook migration only. The token pipeline work defers to Sprint 05 per the Feb 28 planning note.'
       }
     ],
 
     decisions: [
-      { id: 'DEC-014', title: 'Retry ceiling set to 6 attempts', meta: 'MAR 10 · L. Marchetti', state: 'LOCKED' },
-      { id: 'DEC-012', title: 'RBAC roles scoped per workspace', meta: 'MAR 06 · M. Okafor', state: 'LOCKED' },
+      { id: 'DEC-014', title: 'Retry ceiling set to 6 attempts', meta: 'MAR 10 · Front-End Systems', state: 'LOCKED' },
+      { id: 'DEC-012', title: 'RBAC roles scoped per workspace', meta: 'MAR 06 · Production Desk', state: 'LOCKED' },
       { id: 'DEC-011', title: 'Retry ceiling set to 3 attempts', meta: 'FEB 27 · superseded', state: 'SUPERSEDED' }
     ],
 
@@ -105,7 +105,7 @@ const CLIENTS = [
     engagement: 'Brand Systems · Retainer',
     started: 'Sep 2025',
     tzId: 'Europe/London',
-    contact: 'H. Vasquez',
+    contact: 'Design Desk',
     sla: '6h response',
 
     sprint: {
@@ -140,21 +140,21 @@ const CLIENTS = [
     },
 
     deliverables: [
-      { id: '#208', title: 'Token naming spec v2', type: 'DOC', owner: 'H. Vasquez', date: 'MAR 12', status: 'IN PRODUCTION' },
-      { id: '#211', title: 'Figma variables export bridge', type: 'PR', owner: 'S. Lindqvist', date: 'MAR 12', status: 'REVIEW' },
-      { id: '#214', title: 'Docs site scaffold', type: 'PR', owner: 'T. Nakamura', date: 'MAR 10', status: 'DEPLOYED' },
-      { id: '#216', title: 'Motion token audit', type: 'DOC', owner: 'S. Lindqvist', date: 'MAR 09', status: 'DEPLOYED' },
-      { id: '#219', title: 'Theme switch harness', type: 'PR', owner: 'T. Nakamura', date: 'MAR 11', status: 'REVIEW' }
+      { id: '#208', title: 'Token naming spec v2', type: 'DOC', owner: 'Design Desk', date: 'MAR 12', status: 'IN PRODUCTION' },
+      { id: '#211', title: 'Figma variables export bridge', type: 'PR', owner: 'Systems Desk', date: 'MAR 12', status: 'REVIEW' },
+      { id: '#214', title: 'Docs site scaffold', type: 'PR', owner: 'Front-End Systems', date: 'MAR 10', status: 'DEPLOYED' },
+      { id: '#216', title: 'Motion token audit', type: 'DOC', owner: 'Systems Desk', date: 'MAR 09', status: 'DEPLOYED' },
+      { id: '#219', title: 'Theme switch harness', type: 'PR', owner: 'Front-End Systems', date: 'MAR 11', status: 'REVIEW' }
     ],
 
     feed: [
       {
-        type: 'DISPATCH', date: 'MAR 12', time: '10:08', by: 'H. Vasquez',
+        type: 'DISPATCH', date: 'MAR 12', time: '10:08', by: 'Design Desk',
         title: 'Variable sync unblocked',
         body: 'Figma released the variable API quota increase overnight. The export bridge is now running against the live library instead of the fixture file.'
       },
       {
-        type: 'RECAP', date: 'MAR 11', time: '16:44', by: 'H. Vasquez',
+        type: 'RECAP', date: 'MAR 11', time: '16:44', by: 'Design Desk',
         title: 'Week 10 async recap',
         body: 'Token audit findings, namespace decision walkthrough, and the docs site information architecture.',
         video: { dur: '04:48', chapters: 9 }
@@ -165,15 +165,15 @@ const CLIENTS = [
         body: 'All semantic tokens sit under sys/, component tokens under comp/. Primitive layer stays unprefixed. Locked with the design systems team.'
       },
       {
-        type: 'DISPATCH', date: 'MAR 07', time: '09:15', by: 'S. Lindqvist',
+        type: 'DISPATCH', date: 'MAR 07', time: '09:15', by: 'Systems Desk',
         title: 'Figma library freeze ends Mar 14',
         body: 'No library edits between now and the 14th while the export bridge stabilises. Ping the dispatch channel for exceptions.'
       }
     ],
 
     decisions: [
-      { id: 'DEC-033', title: 'Token namespaces follow the sys/ prefix', meta: 'MAR 09 · H. Vasquez', state: 'LOCKED' },
-      { id: 'DEC-031', title: 'Docs site ships on the existing stack', meta: 'MAR 05 · T. Nakamura', state: 'LOCKED' },
+      { id: 'DEC-033', title: 'Token namespaces follow the sys/ prefix', meta: 'MAR 09 · Design Desk', state: 'LOCKED' },
+      { id: 'DEC-031', title: 'Docs site ships on the existing stack', meta: 'MAR 05 · Front-End Systems', state: 'LOCKED' },
       { id: 'DEC-029', title: 'Motion tokens deferred to phase two', meta: 'FEB 26 · superseded', state: 'SUPERSEDED' }
     ],
 
@@ -193,7 +193,7 @@ const CLIENTS = [
     engagement: 'Platform Migration · Project',
     started: 'Jan 2026',
     tzId: 'Europe/Berlin',
-    contact: 'A. Brandt',
+    contact: 'Platform Desk',
     sla: '2h response',
 
     sprint: {
@@ -228,21 +228,21 @@ const CLIENTS = [
     },
 
     deliverables: [
-      { id: '#092', title: 'Read path cutover runbook', type: 'DOC', owner: 'A. Brandt', date: 'MAR 13', status: 'IN PRODUCTION' },
-      { id: '#096', title: 'Dual-write reconciliation job', type: 'PR', owner: 'K. Nowak', date: 'MAR 13', status: 'REVIEW' },
-      { id: '#099', title: 'Replica lag alerting', type: 'PR', owner: 'M. Fischer', date: 'MAR 12', status: 'DEPLOYED' },
-      { id: '#101', title: 'Legacy table freeze manifest', type: 'RFC', owner: 'K. Nowak', date: 'MAR 11', status: 'QUEUED' },
-      { id: '#104', title: 'Cutover rehearsal transcript', type: 'DOC', owner: 'A. Brandt', date: 'MAR 12', status: 'DEPLOYED' }
+      { id: '#092', title: 'Read path cutover runbook', type: 'DOC', owner: 'Platform Desk', date: 'MAR 13', status: 'IN PRODUCTION' },
+      { id: '#096', title: 'Dual-write reconciliation job', type: 'PR', owner: 'Data Desk', date: 'MAR 13', status: 'REVIEW' },
+      { id: '#099', title: 'Replica lag alerting', type: 'PR', owner: 'Infra Desk', date: 'MAR 12', status: 'DEPLOYED' },
+      { id: '#101', title: 'Legacy table freeze manifest', type: 'RFC', owner: 'Data Desk', date: 'MAR 11', status: 'QUEUED' },
+      { id: '#104', title: 'Cutover rehearsal transcript', type: 'DOC', owner: 'Platform Desk', date: 'MAR 12', status: 'DEPLOYED' }
     ],
 
     feed: [
       {
-        type: 'DISPATCH', date: 'MAR 13', time: '08:52', by: 'A. Brandt',
+        type: 'DISPATCH', date: 'MAR 13', time: '08:52', by: 'Platform Desk',
         title: 'Cutover rehearsal passed',
         body: 'Full rehearsal completed in 41 minutes against a production snapshot. Two reconciliation gaps found and patched before the runbook freeze.'
       },
       {
-        type: 'RECAP', date: 'MAR 12', time: '18:10', by: 'A. Brandt',
+        type: 'RECAP', date: 'MAR 12', time: '18:10', by: 'Platform Desk',
         title: 'Week 10 async recap',
         body: 'Rehearsal results, dual-write metrics, and the legacy decommission sequence.',
         video: { dur: '08:31', chapters: 17 }
@@ -253,16 +253,16 @@ const CLIENTS = [
         body: 'Extended from 24h after the lag analysis. Rejected the shorter window due to replica warm-up variance across regions.'
       },
       {
-        type: 'DISPATCH', date: 'MAR 09', time: '15:47', by: 'M. Fischer',
+        type: 'DISPATCH', date: 'MAR 09', time: '15:47', by: 'Infra Desk',
         title: 'Read replica lag resolved',
         body: 'Root cause was a missing composite index on the events table. Lag is back under 200ms across all three regions.'
       }
     ],
 
     decisions: [
-      { id: 'DEC-007', title: 'Dual-write window extended to 72h', meta: 'MAR 11 · A. Brandt', state: 'LOCKED' },
-      { id: 'DEC-005', title: 'Cutover runs region-by-region', meta: 'MAR 04 · A. Brandt', state: 'LOCKED' },
-      { id: 'DEC-003', title: 'Legacy decommission waits 14 days', meta: 'FEB 28 · A. Brandt', state: 'LOCKED' }
+      { id: 'DEC-007', title: 'Dual-write window extended to 72h', meta: 'MAR 11 · Platform Desk', state: 'LOCKED' },
+      { id: 'DEC-005', title: 'Cutover runs region-by-region', meta: 'MAR 04 · Platform Desk', state: 'LOCKED' },
+      { id: 'DEC-003', title: 'Legacy decommission waits 14 days', meta: 'FEB 28 · Platform Desk', state: 'LOCKED' }
     ],
 
     facts: [
@@ -280,6 +280,9 @@ const CLIENTS = [
 
 const state = { client: 'studio-a', filter: 'ALL' };
 
+const revisionsLeft = {};
+let recapOpener;
+
 const $   = id => document.getElementById(id);
 const pad = n => String(n).padStart(2, '0');
 const fmt = n => Number.isInteger(n) ? n.toFixed(1) : String(n);
@@ -291,6 +294,39 @@ function statusKey(s) {
     'REVIEW': 'review',
     'QUEUED': 'queued'
   }[s] || 'queued';
+}
+
+function currentClient() {
+  return CLIENTS.find(x => x.id === state.client);
+}
+
+function ensureRevisionState(c) {
+  c.deliverables.forEach(d => {
+    if (d.status === 'REVIEW' || d.status === 'IN PRODUCTION') {
+      if (revisionsLeft[d.id] === undefined) revisionsLeft[d.id] = 2;
+    }
+  });
+}
+
+function logDispatch(c, entry) {
+  c.feed.unshift({
+    type: entry.type || 'DISPATCH',
+    date: entry.date || new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).toUpperCase(),
+    time: entry.time || new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }),
+    by: entry.by || 'Production Desk',
+    title: entry.title,
+    body: entry.body,
+    video: entry.video,
+  });
+}
+
+function logDecision(c, entry) {
+  c.decisions.unshift({
+    id: entry.id || `DEC-${String(50 + c.decisions.length).padStart(3, '0')}`,
+    title: entry.title,
+    meta: entry.meta || `${new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).toUpperCase()} · ${entry.by || 'Production Desk'}`,
+    state: entry.state || 'LOCKED',
+  });
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -433,7 +469,20 @@ function renderRetainer(c) {
 }
 
 function renderLedger(c) {
-  const rows = c.deliverables.map(d => `
+  const rows = c.deliverables.map(d => {
+    const canAct = d.status === 'REVIEW' || d.status === 'IN PRODUCTION';
+    const left = revisionsLeft[d.id];
+    const actions = canAct ? `
+      <div class="dl-actions">
+        <button class="dl-btn dl-btn-approve" data-approve="${d.id}" title="Approve deliverable" aria-label="Approve ${d.id}">✓</button>
+        <button class="dl-btn dl-btn-revise" data-revise="${d.id}" title="Request revision" aria-label="Request revision for ${d.id}"
+          ${left === 0 ? 'disabled' : ''}>
+          ${left === 0 ? '0' : left}
+        </button>
+      </div>
+    ` : '<div class="dl-actions"></div>';
+
+    return `
     <div class="dl-row">
       <span class="dl-id">${d.id}</span>
       <span class="dl-title">${d.title}</span>
@@ -441,8 +490,10 @@ function renderLedger(c) {
       <span class="dl-owner">${d.owner}</span>
       <span class="dl-date">${d.date}</span>
       <span class="dl-status st-${statusKey(d.status)}"><i></i>${d.status}</span>
+      ${actions}
     </div>
-  `).join('');
+  `;
+  }).join('');
 
   $('ledgerBlock').innerHTML = `
     <div class="rubric">
@@ -458,6 +509,7 @@ function renderLedger(c) {
       <span>OWNER</span>
       <span>UPDATED</span>
       <span>STATUS</span>
+      <span></span>
     </div>
     ${rows}
   `;
@@ -474,7 +526,7 @@ function renderFeed(c) {
     .filter(e => state.filter === 'ALL' || e.type === state.filter)
     .map(e => {
       const recap = e.video ? `
-        <div class="recap">
+        <div class="recap" data-recap="${e.title.replace(/"/g, '&quot;')}" role="button" tabindex="0">
           <div class="recap-play"><span></span></div>
           <div class="recap-meta">
             <div class="recap-t">${e.title}</div>
@@ -567,7 +619,8 @@ function tick() {
    ══════════════════════════════════════════════════════════════ */
 
 function render() {
-  const c = CLIENTS.find(x => x.id === state.client);
+  const c = currentClient();
+  ensureRevisionState(c);
   renderMasthead(c);
   renderSprint(c);
   renderRetainer(c);
@@ -575,6 +628,67 @@ function render() {
   renderFeed(c);
   renderRegister(c);
   tick();
+}
+
+function handleApprove(id) {
+  const c = currentClient();
+  const d = c.deliverables.find(x => x.id === id);
+  if (!d || (d.status !== 'REVIEW' && d.status !== 'IN PRODUCTION')) return;
+
+  d.status = 'DEPLOYED';
+  d.date = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short' }).toUpperCase();
+  logDispatch(c, {
+    title: `Deliverable ${d.id} approved`,
+    body: `Client signed off on "${d.title}". Deployment confirmed by ${d.owner}.`,
+    by: 'Client Sign-off',
+  });
+  logDecision(c, {
+    title: `Signed off ${d.id} — ${d.title}`,
+    state: 'LOCKED',
+    by: 'Client Sign-off',
+  });
+  render();
+}
+
+function handleRevise(id) {
+  const c = currentClient();
+  const d = c.deliverables.find(x => x.id === id);
+  if (!d || (d.status !== 'REVIEW' && d.status !== 'IN PRODUCTION')) return;
+  if (revisionsLeft[id] === undefined) revisionsLeft[id] = 2;
+  if (revisionsLeft[id] <= 0) return;
+
+  revisionsLeft[id] -= 1;
+  logDispatch(c, {
+    title: `Revision requested on ${d.id}`,
+    body: `Client requested revision of "${d.title}". ${revisionsLeft[id]} revision(s) remaining in this cycle.`,
+    by: 'Client Sign-off',
+  });
+  render();
+}
+
+function openRecap(title) {
+  const c = currentClient();
+  const entry = c.feed.find(e => e.video && e.title === title);
+  if (!entry) return;
+
+  const drawer = $('recapDrawer');
+  recapOpener = document.activeElement;
+  drawer.querySelector('.rd-title').textContent = title;
+  drawer.querySelector('.rd-meta').textContent =
+    `${entry.video.dur} · ${entry.video.chapters} chapters · ${entry.by}`;
+  drawer.hidden = false;
+  drawer.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  drawer.querySelector('.rd-close').focus();
+}
+
+function closeRecap() {
+  const drawer = $('recapDrawer');
+  if (drawer.hidden) return;
+  drawer.hidden = true;
+  drawer.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (recapOpener) recapOpener.focus();
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -591,10 +705,43 @@ $('switcher').addEventListener('click', e => {
 });
 
 $('feedBlock').addEventListener('click', e => {
-  const btn = e.target.closest('[data-filter]');
-  if (!btn) return;
-  state.filter = btn.dataset.filter;
-  renderFeed(CLIENTS.find(x => x.id === state.client));
+  const filterBtn = e.target.closest('[data-filter]');
+  if (filterBtn) {
+    state.filter = filterBtn.dataset.filter;
+    renderFeed(currentClient());
+    return;
+  }
+  const recap = e.target.closest('[data-recap]');
+  if (recap) openRecap(recap.dataset.recap);
+});
+
+$('feedBlock').addEventListener('keydown', e => {
+  const recap = e.target.closest('[data-recap]');
+  if (recap && (e.key === 'Enter' || e.key === ' ')) {
+    e.preventDefault();
+    openRecap(recap.dataset.recap);
+  }
+});
+
+$('ledgerBlock').addEventListener('click', e => {
+  const approve = e.target.closest('[data-approve]');
+  if (approve) return handleApprove(approve.dataset.approve);
+  const revise = e.target.closest('[data-revise]');
+  if (revise) return handleRevise(revise.dataset.revise);
+});
+
+document.addEventListener('keydown', e => {
+  const drawer = $('recapDrawer');
+  if (e.key === 'Escape') {
+    closeRecap();
+  } else if (e.key === 'Tab' && !drawer.hidden) {
+    e.preventDefault();
+    drawer.querySelector('.rd-close').focus();
+  }
+});
+
+$('recapDrawer').addEventListener('click', e => {
+  if (e.target.closest('[data-close]')) closeRecap();
 });
 
 /* ══════════════════════════════════════════════════════════════
