@@ -679,7 +679,7 @@ function openRecap(title) {
   drawer.hidden = false;
   drawer.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
-  drawer.querySelector('.rd-close').focus();
+  drawer.querySelector('.rd-x').focus();
 }
 
 function closeRecap() {
@@ -736,7 +736,7 @@ document.addEventListener('keydown', e => {
     closeRecap();
   } else if (e.key === 'Tab' && !drawer.hidden) {
     e.preventDefault();
-    drawer.querySelector('.rd-close').focus();
+    drawer.querySelector('.rd-x').focus();
   }
 });
 
